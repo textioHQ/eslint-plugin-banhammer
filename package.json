@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-banhammer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Disallow global functions from being called",
   "main": "index.js",
   "scripts": {

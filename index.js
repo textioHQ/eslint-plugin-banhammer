@@ -51,7 +51,9 @@ module.exports.rules = {
 
                             var root = ancestors[i];
                             if (valid && (
-                                        (root.type === 'CallExpression' && root.callee.object.object.name === toMatch[i]) ||
+                                        // TODO there is a better answer by checking the callee.type, but haven't had
+                                        // the time yet.
+                                        (root.type === 'CallExpression' && root.callee.object && root.callee.object.object && root.callee.object.object.name === toMatch[i]) ||
                                         (root.type === 'MemberExpression' && root.object.name === toMatch[i] && root.parent && root.parent.type === 'CallExpression'))){
                                 context.report(node, restrictedCalls[index].join('.') + ' is not allowed');
                             }
