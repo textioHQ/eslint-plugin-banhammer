@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-banhammer",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "description": "disallow certain global functions",
   "keywords": [
     "eslint",
@@ -22,5 +22,5 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
