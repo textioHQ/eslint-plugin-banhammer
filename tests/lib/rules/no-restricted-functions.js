@@ -29,10 +29,18 @@ ruleTester.run("no-restricted-functions", rule, {
 
     invalid: [
         {
-            code: "window.dontCallMe()",
-            options: ["window.dontCallMe"],
+            code: "dontCallMe()",
+            options: ["dontCallMe"],
             errors: [{
-                message: "window.dontCallMe is not allowed",
+                message: "dontCallMe is not allowed",
+                type: "Identifier",
+            }],
+        },
+        {
+            code: "window.dontCallMe()",
+            options: ["dontCallMe"],
+            errors: [{
+                message: "dontCallMe is not allowed",
                 type: "Identifier",
             }],
         },
