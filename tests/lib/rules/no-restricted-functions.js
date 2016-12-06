@@ -49,7 +49,7 @@ ruleTester.run("no-restricted-functions", rule, {
             options: ["dontCallMe"],
             errors: [{
                 message: "dontCallMe is not allowed",
-                type: "Identifier",
+                type: "MemberExpression",
             }],
         },
         {
@@ -60,5 +60,13 @@ ruleTester.run("no-restricted-functions", rule, {
                 type: "MemberExpression",
             }],
         },
+        {
+            code: "it.only()",
+            options: ["describe.only", "it.only"],
+            errors: [{
+                message: "it.only is not allowed",
+                type: "MemberExpression",
+            }],
+        }
     ]
 });
